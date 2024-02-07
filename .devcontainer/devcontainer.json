@@ -7,7 +7,7 @@
     "extensions": [
         "ms-azuretools.vscode-docker"
     ],
-    "postCreateCommand": "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y flex && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*",
+    "postCreateCommand": "sudo apt-get install -y flex",
     "runArgs": ["--privileged"],
     "remoteUser": "vscode"
   }
