@@ -3,7 +3,7 @@
 %}
 
 %%
-" "+[a-z.A-z]+" " {words++;}
+([a-zA-Z0-9])* {words++;}
 %%
 
 int yywrap()
