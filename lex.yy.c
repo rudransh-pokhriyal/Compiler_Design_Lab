@@ -436,8 +436,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "sumof2.l"
-#line 2 "sumof2.l"
+#line 1 "sumofnumbers.l"
+#line 2 "sumofnumbers.l"
 #include <stdio.h>
 int sum = 0;
 #line 444 "lex.yy.c"
@@ -658,7 +658,7 @@ YY_DECL
 		}
 
 	{
-#line 6 "sumof2.l"
+#line 6 "sumofnumbers.l"
 
 #line 664 "lex.yy.c"
 
@@ -719,23 +719,23 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "sumof2.l"
+#line 7 "sumofnumbers.l"
 { sum += atoi(yytext); }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 8 "sumof2.l"
+#line 8 "sumofnumbers.l"
 { printf("Sum of numbers: %d\n", sum); sum = 0; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "sumof2.l"
-{ /* Ignore other characters */ }
+#line 9 "sumofnumbers.l"
+{}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "sumof2.l"
+#line 10 "sumofnumbers.l"
 ECHO;
 	YY_BREAK
 #line 742 "lex.yy.c"
@@ -1743,7 +1743,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 10 "sumof2.l"
+#line 10 "sumofnumbers.l"
 
 
 int yywrap()
