@@ -3,8 +3,8 @@
 %}
 
 %%
-[0-9]+ {printf("This is and integer\n");}
-[0-9]*"."[0-9]+ {printf("Float\n");}
+[0-9]+ {printf("This is an integer\n");}
+[0-9]+"."[0-9]+ {printf("Float\n");}
 %%
 
 int yywrap()
