@@ -362,7 +362,7 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[8] =
     {   0,
-        0,    0,    3,    2,    1,    1,    0
+        1,    1,    3,    2,    1,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -373,14 +373,14 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    2,    2,    2,
         2,    2,    2,    2,    2,    2,    2,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        1,    1,    1,    1,    1,    1,    2,    2,    2,    2,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -436,13 +436,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "armstrong.l"
-#line 2 "armstrong.l"
+#line 1 "palindrome_string.l"
+#line 2 "palindrome_string.l"
 #include<stdio.h>
-#include<math.h>
-int cpy=0,c=0,n=0,sum=0;
+int i,j,flag=0;
+#line 444 "lex.yy.c"
 #line 445 "lex.yy.c"
-#line 446 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -659,9 +658,9 @@ YY_DECL
 		}
 
 	{
-#line 7 "armstrong.l"
+#line 6 "palindrome_string.l"
 
-#line 665 "lex.yy.c"
+#line 664 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -720,33 +719,32 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "armstrong.l"
+#line 7 "palindrome_string.l"
 {
-            n=atoi(yytext);
-            cpy=n;
-            while(cpy>0)
-            {
-                c++;
-                cpy=cpy/10;
-            }
-            cpy=n;
-            while(cpy>0)
-            {
-                sum=sum+pow(cpy%10,c);
-                cpy=cpy/10;
-            }
-            if(sum==n)
-            printf("Armstrong Number");
-            else
-            printf("Not a Armstrong Number");
-        }
+                for(i=0,j=yyleng-1;i<=j;i++,j--)
+                {
+                    if(yytext[i]==yytext[j])
+                    {
+                        flag=0;
+                    }
+                    else
+                    {
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==1)
+                printf("Not Palindrome");
+                else
+                printf("Palindrome");
+             }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 27 "armstrong.l"
+#line 25 "palindrome_string.l"
 ECHO;
 	YY_BREAK
-#line 750 "lex.yy.c"
+#line 748 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1751,15 +1749,16 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 27 "armstrong.l"
+#line 25 "palindrome_string.l"
 
 
 int yywrap()
 {
     return 1;
 }
-int main() {
-    yylex();
-    return 0;
-}
 
+int main()
+{
+    yylex();
+    return 1;
+}
