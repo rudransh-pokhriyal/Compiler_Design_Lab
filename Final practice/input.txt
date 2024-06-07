@@ -1,0 +1,15 @@
+rudransh
+is
+a
+good   boy
+
+#include<stdio.h> //preproccesing
+int main() // main function
+{
+    /* this program contains the 
+        logic of adding two numbers
+        in c language */
+    int a,b,sum=0;
+    sum=a+b;
+    printf("sum is %d",sum);
+}
